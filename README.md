@@ -12,7 +12,7 @@ Optimization methods: image augmentation, dropout, early stopping
 
 
 
-#Overview and Purpose
+# Overview and Purpose
 
 In this document, we train a convolutional neural network from scratch, and then investigate the added benefit of using pre-trained cnn models on the same dataset. Furthermore, we investigate model ensembling in general and its potential benefits and drawbacks.
 
@@ -24,7 +24,7 @@ From the Kaggle notebook (2) we have some code to work with for pre-trained mode
 
 
 
-Table of results using CategoricalCrossEntropy loss function and class_mode='categorical' in data generator functions
+## Table of results using CategoricalCrossEntropy loss function and class_mode='categorical' in data generator functions
 
 | model | loss | accuracy | val_loss | val_accuracy |
 |-------|------|----------|----------|--------------|

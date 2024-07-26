@@ -78,6 +78,60 @@ loss: 0.9132 - accuracy: 0.8889
 
 Use this crossentropy loss function when there are two or more label classes. We expect labels to be provided as integers. If you want to provide labels using one-hot representation, please use CategoricalCrossentropy loss. There should be # classes floating point values per feature for y_pred and a single floating point value per feature for y_true.
 
+class_mode: One of "categorical", "binary", "sparse", "input", or None. Default: "categorical". Determines the type of label arrays that are returned: - "categorical" gives 2D output (aka. list of numbers of length N), [0, 0, 1, 0], which is a one-hot encoding (only one number is 1/ "hot") representing the target variable. This is for mutually exclusive labels. A dog cannot be a cat, a human is not a dog. "binary" will be 1D binary labels, "sparse" will be 1D integer labels, - "input" will be images identical to input images (mainly used to work with autoencoders). - If None, no labels are returned (the generator will only yield batches of image data, which is useful to use with model.predict_generator()). Please note that in case of class_mode None, the data still needs to reside in a subdirectory of directory for it to work correctly. 
+
+## Investigate ensemble models
+
+
+Ensemble learning uses multiple machine learning models to try to make better predictions on a dataset. An ensemble model works by training different models on a dataset and having each model make predictions individually. The predictions of these models are then combined in the ensemble model to make a final prediction.
+
+Every model has its strengths and weaknesses. Ensemble models can be beneficial by combining individual models to help improve upon the predictive performance of each individual model. 
+
+Ensemble models are a way to improve the performance of machine learning algorithms by combining the predictions of multiple models. The main idea is that different models might make different kinds of errors, so combining them can reduce the overall error rate. Here’s a breakdown of how ensemble models work and some common techniques:
+
+### How Ensembles Work
+
+1. **Training Multiple Models**: First, you train multiple base models (often called “learners”) on the same problem. These models could be of the same type (e.g., multiple decision trees) or different types (e.g., decision trees, support vector machines, and neural networks).
+
+2. **Combining Predictions**: Once trained, the ensemble combines the predictions of the base models to make a final prediction. The combination can be done in various ways, such as averaging the predictions or using a majority vote.
+
+3. **Reducing Overfitting**: By combining models, ensembles can reduce the risk of overfitting to the training data, as errors made by individual models might be corrected by others in the ensemble.
+
+### Common Techniques
+
+1. **Bagging (Bootstrap Aggregating)**:
+   - **Process**: Multiple versions of a model are trained on different subsets of the training data, typically created by sampling with replacement (bootstrap samples). 
+   - **Example**: Random Forests, which are ensembles of decision trees.
+   - **How it Helps**: Reduces variance by averaging predictions or using majority voting, leading to more stable predictions.
+
+2. **Boosting**:
+   - **Process**: Models are trained sequentially. Each new model tries to correct the errors made by the previous models. Weights are adjusted to pay more attention to the misclassified examples.
+   - **Example**: AdaBoost, Gradient Boosting Machines (GBM), XGBoost.
+   - **How it Helps**: Reduces bias and can convert weak learners into strong learners by focusing on errors of previous models.
+
+3. **Stacking (Stacked Generalization)**:
+   - **Process**: Different models are trained on the same data, and their predictions are used as inputs to a final model (meta-model) that makes the ultimate prediction.
+   - **Example**: Combining logistic regression, decision trees, and neural networks as base models, with a meta-model like a logistic regression model that combines their predictions.
+   - **How it Helps**: Leverages the strengths of different models and combines their predictions to potentially achieve better performance than any individual model.
+
+4. **Voting**:
+   - **Process**: Each model in the ensemble makes a prediction, and the final prediction is made by taking a majority vote (for classification) or averaging (for regression).
+   - **Example**: Simple majority vote among different classifiers.
+   - **How it Helps**: Simple to implement and can improve robustness by reducing the likelihood of errors from any single model.
+
+### Advantages of Ensemble Models
+
+- **Improved Accuracy**: By combining models, ensembles often achieve better accuracy than individual models.
+- **Reduced Overfitting**: Ensembles can mitigate overfitting by smoothing out errors and variances.
+- **Robustness**: They are more robust to changes in the input data and can handle noisy data better.
+
+### Disadvantages of Ensemble Models
+
+- **Increased Complexity**: Ensembles can be more complex to implement and interpret compared to individual models.
+- **Computational Cost**: Training multiple models can be computationally expensive and require more resources.
+
+Ensemble methods are a powerful tool in machine learning, often used in practice to achieve higher performance and more reliable predictions.
+
 cm_categorical.png
 
 
@@ -96,3 +150,5 @@ cm_categorical.png
 "What does class_mode parameter in Keras image_gen.flow_from_directory() signify?" (Jan. 2020) Retrieved from https://stackoverflow.com/questions/59439128/what-does-class-mode-parameter-in-keras-image-gen-flow-from-directory-signify
 
 "Choosing between Cross Entropy and Sparse Cross Entropy — The Only Guide you Need!" (2023) Retrieved from https://medium.com/@shireenchand/choosing-between-cross-entropy-and-sparse-cross-entropy-the-only-guide-you-need-abea92c84662
+
+"Building an Ensemble Learning Model Using Scikit-learn" (Nov. 18 2018) Retrieved from https://towardsdatascience.com/ensemble-learning-using-scikit-learn-85c4531ff86a

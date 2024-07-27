@@ -132,6 +132,17 @@ Ensemble models are a way to improve the performance of machine learning algorit
 
 Ensemble methods are a powerful tool in machine learning, often used in practice to achieve higher performance and more reliable predictions.
 
+
+
+## Ensemble validation set - figure out why only 1 epoch / why validation accuracy so low
+
+The test_steps parameter in the call to model.evaluate is currently evaluating to 1, so that is why there is only 1 epoch. It seems to be related to the data generator function that we are using - when this parameter was manually increased to 10, a warning was obtained that said the input ran out of data.
+
+
+## Confusing Github Error
+
+!(github_error.png)
+
 cm_categorical.png
 
 

@@ -141,7 +141,7 @@ The test_steps parameter in the call to model.evaluate is currently evaluating t
 
 ## Confusing Github Error
 
-!(github_error.png)
+![error](https://github.com/schr0841/cnn_group_project/blob/main/github_error.png)
 
 cm_categorical.png
 

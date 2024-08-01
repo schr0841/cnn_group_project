@@ -145,7 +145,9 @@ The validation accuracy was originally not computed, but we added an appropriate
 
 ![error](https://github.com/schr0841/cnn_group_project/blob/main/github_error.png)
 
-cm_categorical.png
+
+## Confusion Matrix of Results for Categorical cross entropy loss function
+![image](https://github.com/schr0841/cnn_group_project/blob/main/cm_categorical.png)
 
 
 ## References

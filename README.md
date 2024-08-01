@@ -27,21 +27,22 @@ From the Kaggle notebook (2) we have some code to work with for pre-trained mode
 
 | model | loss | accuracy | val_loss | val_accuracy |
 |-------|------|----------|----------|--------------|
-| Base cnn  | 6.9153  | 0.2414  | 7.6113 | 0.1806 |
-| EfficientNetB3  | 0.0324 | 0.9837 | 0.8413 | 0.8063 |
-| ResNet50 | 0.0145 | 0.9967 | 1.7889 | 0.7111 |
-| InceptionV3 | 0.0157 | 0.9935 | 2.4461 | 0.5143 |
-| Ensemble | 0.3838 | 0.9028 |   |   |
+| Base cnn  | 9.0188  | 0.1876  | 8.0590 | 0.2917 |
+| EfficientNetB3  | 0.0544 | 0.9804 | 0.8051 | 0.8444 |
+| ResNet50 | 0.0118 | 0.9951 | 2.0054 | 0.7587 |
+| InceptionV3 | 0.0439 | 0.9886 | 2.8829 | 0.5016 |
+| Ensemble | 0.3994 | 0.8750 | 0.2605 | 0.9750 |
 
-loss: 6.9153 - accuracy: 0.2414 - val_loss: 7.6113 - val_accuracy: 0.1806
+loss: 9.0188 - accuracy: 0.1876 - val_loss: 8.0590 - val_accuracy: 0.2917
 
-loss: 0.0324 - accuracy: 0.9837 - val_loss: 0.8413 - val_accuracy: 0.8063
+loss: 0.0544 - accuracy: 0.9804 - val_loss: 0.8051 - val_accuracy: 0.8444
 
-loss: 0.0145 - accuracy: 0.9967 - val_loss: 1.7889 - val_accuracy: 0.7111
+loss: 0.0118 - accuracy: 0.9951 - val_loss: 2.0054 - val_accuracy: 0.7587
 
-loss: 0.0157 - accuracy: 0.9935 - val_loss: 2.4461 - val_accuracy: 0.5143
+loss: 0.0439 - accuracy: 0.9886 - val_loss: 2.8829 - val_accuracy: 0.5016
 
-loss: 0.3838 - accuracy: 0.9028
+loss: 0.3994 - accuracy: 0.8750 - val_loss: 0.2605 - val_accuracy: 0.9750
+
 
 
 ## Table of results using SparseCategoricalCrossEntropy loss function and class_mode='sparse' in data generator functions
@@ -52,7 +53,7 @@ loss: 0.3838 - accuracy: 0.9028
 | EfficientNetB3  | 0.0536 | 0.9837 | 0.6506 | 0.8317 |
 | ResNet50 | 0.0682 | 0.9886 | 2.0240 | 0.7365 |
 | InceptionV3 | 0.0615 | 0.9902 | 2.9775 | 0.5111 |
-| Ensemble | 0.9132 | 0.8889 |   |   |
+| Ensemble | 0.9132 | 0.8889 | 0.9594 | 0.8999 |
 
 loss: 0.0112 - accuracy: 0.9984 - val_loss: 2.0032 - val_accuracy: 0.6111
 
@@ -62,7 +63,7 @@ loss: 0.0682 - accuracy: 0.9886 - val_loss: 2.0240 - val_accuracy: 0.7365
 
 loss: 0.0615 - accuracy: 0.9902 - val_loss: 2.9775 - val_accuracy: 0.5111
 
-loss: 0.9132 - accuracy: 0.8889
+loss: 0.9132 - accuracy: 0.8889 - val_loss: 0.9594 - val_accuracy: 0.8999
 
 ## Project topics:
 

@@ -19,7 +19,7 @@ In this document, we train a convolutional neural network from scratch, and then
 
 
 
-From the Kaggle notebook (2) we have some code to work with for pre-trained models. 
+From the Kaggle notebook (2) we have some code to work with for pre-trained models. We evaluate each model on test loss, test accuracy, validation loss and validation accuracy. Below are two tables, each populated using a different type of loss function:
 
 
 
